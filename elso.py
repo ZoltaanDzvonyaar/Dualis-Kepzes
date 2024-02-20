@@ -18,4 +18,12 @@ def rejtjelez(uzenet,kulcs):
 
         kulcs_karakter_indexe+=1
 
-        
+        uzenet_kulcs_kod=(karakterkodja + kulcs_karakterjeinek_kodja)%27
+        if uzenet_kulcs_kod==26:
+            rejtjelezett_u+=" "
+        else:
+            rejtjelezett_u+= chr(uzenet_kulcs_kod + ord("a")) #hozzaadva az a-hoz rendelt ASCII szamot visszater az uzenet_kulcs_kod az ASCII tablazatban levo betukhoz.
+    return rejtjelezett_u
+
+atirtuzenet=rejtjelez(uzenet,kulcs)
+print(atirtuzenet)
